@@ -1,0 +1,28 @@
+/* Cleans up the sidebar by shrinking the workspace title and the essentials tabs */
+
+#navigator-toolbox[zen-sidebar-expanded='true'] {
+  /* Shrink essentials height */
+  & #zen-essentials {
+    --tab-min-height: 30px !important;
+  }
+  
+  /* Convert essentials grid to flexbox */
+  .zen-essentials-container {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: space-evenly !important;
+      gap: 1px !important;
+      align-content: stretch !important;
+  }
+  
+  /* Allow essentials tabs to stretch horizontally */
+  .zen-essentials-container > .tabbrowser-tab {
+    flex-grow: 1 !important;
+    flex-basis: 39px !important;
+  }
+  
+  /* Shrink padding around the name of the current workspace */
+  .zen-current-workspace-indicator {
+    min-height: 30px !important;
+  }
+}
