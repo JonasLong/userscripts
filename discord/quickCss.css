@@ -1,0 +1,92 @@
+/*
+Vencord applies stlyes in the quickCss.css file to the Discord UI.
+However, this stylesheet can also be used on the Discord website
+(with browser userstyles, or with extensions like Stylus/Tampermonkey),
+and in other modified Discord clients.
+*/
+
+/* Hide Nitro gift button in the message dialogue */
+button[aria-label="Send a gift"] {
+    display: none;
+}
+
+/* Remove big Nitro tab in DMs menu */
+[href="/store"] {
+        display: none;
+}
+
+/* Remove Store tab in DMs menu */
+[href="/shop"] {
+        display: none;
+}
+
+/* Remove Discover Button */
+*:has(>div>svg foreignObject div[aria-label="Discover"]) {
+        display: none;
+}
+
+/* Hide sticker picker button from message dialogue (but not the tab for stickers) */
+button[aria-label="Open sticker picker"] {
+    display: none;
+}
+
+/* Hide soundmoji row at top of the emoji picker (not the tab for soundmoji) */
+/* div:has(> div.soundmojiViewMore_c656ac) {
+    display: none;
+} */
+/* nvm, soundmoji is kill */
+
+/* Hide Help button in the top right */
+*:has(>div[aria-label="Help"]) {
+    display: none;
+}
+
+/* Hide the apps button that appears over hovered images */
+div > div[aria-label="Edit Image with Apps"]{
+    display: none;
+}
+
+/* Hide the apps button next to the message dialogue */
+.app-launcher-entrypoint {
+    display: none;
+}
+
+/* Show full Bio when viewing user in sidebar */
+.descriptionClamp_f5f93a {
+    /* overflow-y: scroll; */
+    /* overflow: hidden; */
+    -webkit-line-clamp:10;
+    max-height: 30vh;
+}
+
+/* Show full user status in sidebar bio and in full bio */
+.content_ab8609 {
+    max-height: unset !important;
+    /* overflow: scroll; */
+    -webkit-line-clamp: 9;
+}
+
+/* Make the inbox taller */
+div[aria-label="Inbox"] div[aria-label="Unreads"]{
+    max-height: 90vh;
+}
+
+/* Faster tooltip when hovering reactions */
+.full-motion .translate_faf9c0.didRender_faf9c0{
+    transition: transform 0s ease-out;
+}
+
+/* Hide the cpu-intensive animation for empty voice channels */
+.pulseGradient__11664 {
+    display: none;
+}
+
+/* Hide the "Speak Message" option in a message's context menu */
+#message-actions-tts {
+    display: none;
+}
+
+/* Hide the Apps button in a message's context menu */
+#message-actions-apps {
+    display: none;
+}
