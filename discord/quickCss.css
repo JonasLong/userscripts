@@ -3,10 +3,12 @@ Vencord applies stlyes in the quickCss.css file to the Discord UI.
 However, this stylesheet can also be used on the Discord website
 (with browser userstyles, or with extensions like Stylus/Tampermonkey),
 and in other modified Discord clients.
+
+For updates, check https://github.com/JonasLong/userscripts/blob/main/discord/quickCss.css
 */
 
 /* Hide Nitro gift button in the message dialogue */
-button[aria-label="Send a gift"] {
+div[aria-label="Send a gift"] {
     display: none;
 }
 
@@ -26,7 +28,7 @@ button[aria-label="Send a gift"] {
 }
 
 /* Hide sticker picker button from message dialogue (but not the tab for stickers) */
-button[aria-label="Open sticker picker"] {
+div[aria-label="Open sticker picker"] {
     display: none;
 }
 
@@ -51,6 +53,11 @@ div > div[aria-label="Edit Image with Apps"]{
     display: none;
 }
 
+/* Hide the apps button hidden in the plus menu of the message dialogue */
+#channel-attach-SLASH_COMMAND {
+    display: none;
+}
+
 /* Show full Bio when viewing user in sidebar */
 .descriptionClamp_f5f93a {
     /* overflow-y: scroll; */
@@ -67,8 +74,9 @@ div > div[aria-label="Edit Image with Apps"]{
 }
 
 /* Make the inbox taller */
-div[aria-label="Inbox"] div[aria-label="Unreads"]{
+div[aria-label="Inbox"] > div{
     max-height: 90vh;
+    height: 90vh;
 }
 
 /* Faster tooltip when hovering reactions */
@@ -88,5 +96,15 @@ div[aria-label="Inbox"] div[aria-label="Unreads"]{
 
 /* Hide the Apps button in a message's context menu */
 #message-actions-apps {
+    display: none;
+}
+
+/* Hide the prompt to add a user status */
+ div.addStatusPrompt_ab8609 {
+    display: none;
+ }
+
+/* Hide the "mark all as read" button from the inbox */
+div[aria-label="Mark All as Read"]{
     display: none;
 }
