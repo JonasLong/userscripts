@@ -25,4 +25,9 @@
   .zen-current-workspace-indicator {
     min-height: 30px !important;
   }
+
+  /* Custom background color */
+  html#main-window, #zen-browser-background, #navigator-toolbox {
+    --zen-main-browser-background: linear-gradient(100deg, #2d0625 0%, #543475 25%, #7675c3 50%, #89c7b0 75%, #f3edbd 100%) !important;
+  }
 }
